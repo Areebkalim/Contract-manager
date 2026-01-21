@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { FileText, Plus } from 'lucide-react';
 
-// Mock data to ensure the build passes
 const contracts = [
   { id: '1', name: 'Vendor Agreement - Alpha', blueprintName: 'Standard Service Agreement', status: 'Draft', createdDate: new Date().toISOString() },
   { id: '2', name: 'Employee Contract - John Doe', blueprintName: 'Employment Template', status: 'Pending Signature', createdDate: new Date().toISOString() },
