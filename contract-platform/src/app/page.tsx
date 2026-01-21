@@ -19,7 +19,6 @@ export default function Dashboard() {
         </div>
         <div className="flex gap-3">
           
-          {/* FIXED: Now uses Link instead of button */}
           <Link 
             href="/blueprints/new" 
             className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-300 rounded-lg text-slate-700 hover:bg-slate-50 font-medium transition-colors"
@@ -27,7 +26,6 @@ export default function Dashboard() {
              <Plus size={18} /> <span>New Blueprint</span>
           </Link>
 
-          {/* FIXED: Now uses Link instead of button */}
           <Link 
             href="/contracts/new" 
             className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium shadow-sm transition-colors"
@@ -53,5 +51,17 @@ export default function Dashboard() {
                 <td className="px-6 py-4 font-medium text-slate-900">{contract.name}</td>
                 <td className="px-6 py-4 text-slate-600">{contract.blueprintName}</td>
                 <td className="px-6 py-4">
-                  <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium 
-                    ${contract.status === 'Signed' ? 'bg-green-100 text-
+                  {/* FIXED: Logic is now on one single line to prevent build errors */}
+                  <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${contract.status === 'Signed' ? 'bg-green-100 text-green-800' : contract.status === 'Draft' ? 'bg-gray-100 text-gray-800' : 'bg-blue-100 text-blue-800'}`}>
+                    {contract.status}
+                  </span>
+                </td>
+                <td className="px-6 py-4 text-slate-500">{new Date(contract.createdDate).toLocaleDateString()}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
