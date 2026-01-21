@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Contract Management Platform
 
-## Getting Started
+A frontend-based Contract Management Platform built with **Next.js**, **TypeScript**, and **Zustand**. This application allows users to design contract blueprints, generate contract instances, and manage their lifecycle through a dashboard.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Blueprint Creation**: Design templates with dynamic fields (Text, Date, Checkbox).
+- **Contract Generation**: Instantiate contracts from saved blueprints.
+- **Lifecycle Management**: Track contract status (Created → Signed).
+- **Dashboard**: A unified view to filter and manage all contracts.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Tech Stack & Architecture Decisions
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Technology | Usage | Justification |
+| :--- | :--- | :--- |
+| **Next.js 14 (App Router)** | Framework | Provides robust routing and server-side capabilities for future scaling. |
+| **TypeScript** | Language | Ensures type safety, critical for handling strict contract data structures. |
+| **Zustand** | State Management | Selected over Redux for its lightweight footprint and simple boilerplate-free API, perfect for this scope. |
+| **Tailwind CSS** | Styling | Chosen for rapid UI development and consistent design tokens without writing custom CSS. |
+| **Lucide React** | Icons | Clean, modern SVG icons to enhance UI clarity. |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Architecture
+- **Store (`src/store`)**: Centralized state for Blueprints and Contracts using Zustand. Decoupled from UI components.
+- **Types (`src/types`)**: Shared interfaces ensure data consistency across the app.
+- **Components**: Split into `layout` (Sidebar) and feature-specific pages for modularity.
 
-## Learn More
+## Setup Instructions
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone the repository**
+   ```bash
+   git clone <YOUR_REPO_LINK_HERE>
+   cd contract-platform
